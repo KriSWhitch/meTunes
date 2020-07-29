@@ -1,3 +1,4 @@
+'use strict'
 import { videoPlayerInit } from './videoPlayer.js';
 import { musicPlayerInit } from './musicPlayer.js';
 import { radioPlayerInit } from './radioPlayer.js';
