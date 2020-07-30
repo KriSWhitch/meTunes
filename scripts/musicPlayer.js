@@ -64,12 +64,14 @@ audioNavigation.addEventListener('click', (event) => {
 
     if (target.classList.contains('audio-button__prev')) {
         prevTrack();
+        loadTrack();
     }
 
     if (target.classList.contains('audio-button__next')) {
         nextTrack();
+        loadTrack();
     }
-    loadTrack();
+    
 });
 
 audioPlayer.addEventListener('ended', () => {
