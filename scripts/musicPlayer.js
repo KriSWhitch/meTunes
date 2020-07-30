@@ -24,43 +24,43 @@ audioPlayer.src = `./audio/${track}.mp3`;
 
 if ( isPlayed ) {
     audioPlayer.pause();
-} else {
+    } else {
     audioPlayer.play();
-}
+    }
 }
 
 const nextTrack = () => {
-if (trackIndex == playlist.length - 1) {
+    if (trackIndex == playlist.length - 1) {
     trackIndex = 0;
-} else {
+    } else {
     trackIndex++;
-}
+    }
 }
 
 const prevTrack = () => {
-if (trackIndex != 0) {
+    if (trackIndex != 0) {
     trackIndex--;
-} else {
+    } else {
     trackIndex = playlist.length - 1;
-}
+    }
 }
 
 audioNavigation.addEventListener('click', (event) => {
-const target = event.target;
-if ( target.classList.contains('audio-button__play')) {
-    audio.classList.toggle('play');
-    audioButtonPlay.classList.toggle('fa-play');
-    audioButtonPlay.classList.toggle('fa-pause');
+    const target = event.target;
+    if ( target.classList.contains('audio-button__play')) {
+        audio.classList.toggle('play');
+        audioButtonPlay.classList.toggle('fa-play');
+        audioButtonPlay.classList.toggle('fa-pause');
 
-    if (audioPlayer.paused) {
-        audioPlayer.play();
-    } else {
-        audioPlayer.pause();
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+        } else {
+            audioPlayer.pause();
+        }
+
+        const track = playlist[trackIndex];
+        audioHeader.textContent = track.toUpperCase(track);
     }
-
-    const track = playlist[trackIndex];
-    audioHeader.textContent = track.toUpperCase(track);
-}
 
     if (target.classList.contains('audio-button__prev')) {
         prevTrack();
