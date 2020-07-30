@@ -80,7 +80,6 @@ audioPlayer.addEventListener('ended', () => {
 });
 
 audioPlayer.addEventListener('timeupdate', () => {
-    console.log(audioPlayer.currentTime);
     const duration = audioPlayer.duration;
     const currentTime = audioPlayer.currentTime;
     const progress = (currentTime/duration) * 100;
@@ -101,7 +100,6 @@ audioProgress.addEventListener('click', event => {
     const x = event.offsetX;
     const totalLength = audioProgress.clientWidth;
     const progress = (x / totalLength) * audioPlayer.duration;
-    console.log(progress);
     audioPlayer.currentTime = progress; 
 });
 
